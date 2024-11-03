@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{>headerlink}}
+  </head>
+  <body>
+    {{>navbar}}
+    <!-- navbar ends here & main header starts -->
+    <div class="container">
+      <h2>PLZZ REGISTER HERE</h2>
+    <form class="myform" action="/register" method="POST">
+    <input type="text" class="form-control" placeholder="Name" value="" name="name">
+    <input type="email" class="form-control" placeholder="Email" value="" name="email">
+    <input type="password" class="form-control" placeholder="Password" value="" name="password">
+    <input type="password" class="form-control" placeholder="Confirm Password" value="" name="confirmpassword">
+    <input type="text" class="form-control" placeholder="Age" value="" name="age">
+    {{!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Any Comments Plzz"></textarea> --}}
+   <button type="submit" class="btn">Submit</button>
+</form>
+</div>
+
+    <!-- footer part -->
+    {{>footer}}
+
+    {{!-- <script src="js/main.js"></script> --}}
+  </body>
+</html>
