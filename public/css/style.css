@@ -338,3 +338,81 @@ sup {
 } */
 
 /* note : - This website is note responsive ..... */
+
+/* Navbar styles */
+.navbar-nav.ms-auto {
+    margin-left: auto !important;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav.ms-auto .nav-item {
+    margin-left: 15px;
+}
+
+.navbar-nav.ms-auto .nav-link {
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav.ms-auto .nav-link:hover {
+    color: #1860dc;
+}
+
+/* Position the auth links in the corner */
+.navbar-collapse {
+    justify-content: space-between;
+}
+
+.navbar-nav:first-child {
+    margin-right: auto;
+}
+
+.navbar-nav.ms-auto {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Auth links specific styles */
+.auth-links {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.auth-links .nav-item {
+    margin-left: 20px;
+}
+
+.auth-links .nav-link {
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.auth-links .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #1860dc;
+}
+
+/* Responsive styles for auth links */
+@media (max-width: 991px) {
+    .auth-links {
+        position: static;
+        transform: none;
+        padding-right: 0;
+        margin-top: 10px;
+    }
+    
+    .auth-links .nav-item {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+}

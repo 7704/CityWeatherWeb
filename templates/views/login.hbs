@@ -3,7 +3,7 @@
   <head>
     {{>headerlink}}
     <style>
-      .register-container {
+      .login-container {
         max-width: 500px;
         margin: 50px auto;
         padding: 30px;
@@ -11,7 +11,7 @@
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
       }
-      .register-title {
+      .login-title {
         text-align: center;
         color: #1860dc;
         margin-bottom: 30px;
@@ -50,19 +50,28 @@
       .btn:hover {
         background-color: #1349b0;
       }
-      .login-link {
+      .register-link {
         text-align: center;
         margin-top: 25px;
         color: #666;
         font-size: 16px;
       }
-      .login-link a {
+      .register-link a {
         color: #1860dc;
         text-decoration: none;
         font-weight: bold;
       }
-      .login-link a:hover {
+      .register-link a:hover {
         text-decoration: underline;
+      }
+      .success-message {
+        color: #28a745;
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        text-align: center;
       }
       .error-message {
         color: #dc3545;
@@ -78,8 +87,14 @@
   <body>
     {{>navbar}}
     <!-- navbar ends here & main header starts -->
-    <div class="register-container">
-      <h2 class="register-title">Register Here</h2>
+    <div class="login-container">
+      <h2 class="login-title">Login Here</h2>
+      
+      {{#if success}}
+      <div class="success-message">
+        {{success}}
+      </div>
+      {{/if}}
       
       {{#if error}}
       <div class="error-message">
@@ -87,20 +102,17 @@
       </div>
       {{/if}}
       
-      <form class="myform" action="/register" method="POST">
-        <input type="text" class="form-control" placeholder="Name" value="{{name}}" name="name" required>
-        <input type="email" class="form-control" placeholder="Email" value="{{email}}" name="email" required>
+      <form class="myform" action="/login" method="POST">
+        <input type="email" class="form-control" placeholder="Email" value="" name="email" required>
         <input type="password" class="form-control" placeholder="Password" value="" name="password" required>
-        <input type="password" class="form-control" placeholder="Confirm Password" value="" name="confirmpassword" required>
-        <input type="number" class="form-control" placeholder="Age" value="{{age}}" name="age" required>
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="btn">Login</button>
       </form>
-      <div class="login-link">
-        Already have an account? <a href="/login">Login here</a>
+      <div class="register-link">
+        Don't have an account? <a href="/register">Register here</a>
       </div>
     </div>
 
     <!-- footer part -->
     {{>footer}}
   </body>
-</html>
+</html> 
